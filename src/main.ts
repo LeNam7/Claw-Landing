@@ -1,10 +1,50 @@
+import { translations } from './i18n';
+export let currentLang = localStorage.getItem('lang') || 'vi';
+
 // UI Interaction Logic for ClawBot V2
 document.addEventListener("DOMContentLoaded", () => {
+  setupLanguageToggle();
   setupDualEngineVisualization();
   setupFormHandler();
   setupSmoothScroll();
   setupThemeToggle();
 });
+
+function setupLanguageToggle() {
+  const toggleBtn = document.getElementById("lang-toggle");
+  if (!toggleBtn) return;
+  
+  const updateDOM = (lang: string) => {
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    toggleBtn.textContent = lang === 'vi' ? 'EN' : 'VI';
+    
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (key && (translations as any)[lang][key]) {
+        el.textContent = (translations as any)[lang][key];
+      }
+    });
+    
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (key && (translations as any)[lang][key]) {
+        (el as HTMLInputElement).placeholder = (translations as any)[lang][key];
+      }
+    });
+
+    const formBtn = document.querySelector("#contact-form button") as HTMLButtonElement;
+    if (formBtn && !formBtn.disabled) formBtn.textContent = (translations as any)[lang]['cta.f.btn'];
+  };
+  
+  updateDOM(currentLang);
+  
+  toggleBtn.addEventListener('click', () => {
+    const newLang = currentLang === 'vi' ? 'en' : 'vi';
+    localStorage.setItem('lang', newLang);
+    updateDOM(newLang);
+  });
+}
 
 function setupThemeToggle() {
   const toggleBtn = document.getElementById("theme-toggle");
@@ -87,23 +127,24 @@ function setupDualEngineVisualization() {
 
   if (!terminalView || !chatView || !typingIndicator) return;
 
-  const demoScript = [
-    { type: 'chat-in', text: 'Trích xuất báo cáo doanh số tháng 5 cho nhóm nhé.', delay: 1000 },
+  const getDemoScript = () => [
+    { type: 'chat-in', text: (translations as any)[currentLang]['hero.chat.msg'], delay: 1000 },
     { type: 'term', text: '> clawbot receive --channel=zalo', delay: 800 },
-    { type: 'term', text: '> [!] Bắt đầu sandbox môi trường phân tích...', delay: 500, highlight: true },
+    { type: 'term', text: currentLang==='en'?'> [!] Initializing analytics sandbox...':'> [!] Bắt đầu sandbox môi trường phân tích...', delay: 500, highlight: true },
     { type: 'term', text: '> [✓] Scraping https://sales.internal/...', delay: 1200 },
-    { type: 'term', text: '> [✓] Phân tích hoàn tất. Tạo PDF.', delay: 1000 },
-    { type: 'chat-out', text: 'Đã xong! Doanh số tháng 5 tăng 12%. File báo cáo chi tiết đính kèm bên dưới 📄', delay: 800 },
-    { type: 'term', text: '> Tác vụ hoàn thành. Chờ lệnh...', delay: 3000 }, // Wait before looping
+    { type: 'term', text: currentLang==='en'?'> [✓] Analysis complete. Generating PDF.':'> [✓] Phân tích hoàn tất. Tạo PDF.', delay: 1000 },
+    { type: 'chat-out', text: currentLang==='en'?'Done! May sales increased by 12%. Detailed report attached below 📄':'Đã xong! Doanh số tháng 5 tăng 12%. File báo cáo chi tiết đính kèm bên dưới 📄', delay: 800 },
+    { type: 'term', text: currentLang==='en'?'> Task completed. Awaiting commands...':'> Tác vụ hoàn thành. Chờ lệnh...', delay: 3000 },
   ];
 
   let currentStep = 0;
 
   function runScript() {
+    const demoScript = getDemoScript();
     if (currentStep >= demoScript.length) {
       // Loop reset
       currentStep = 0;
-      terminalView!.innerHTML = '<span class="sys-msg">Agent standby...</span><br>';
+      terminalView!.innerHTML = `<span class="sys-msg">${currentLang==='vi'?'Agent standby...':'Agent standby...'}</span><br>`;
       // remove old bot messages
       const msgs = chatView?.querySelectorAll('.chat-message');
       msgs?.forEach(msg => {
@@ -160,7 +201,7 @@ function setupDualEngineVisualization() {
   }
 
   // Initial start
-  terminalView!.innerHTML = '<span class="sys-msg">Khởi tạo ANFClaw Node...</span><br>';
+  terminalView!.innerHTML = `<span class="sys-msg">${currentLang==='vi'?'Khởi tạo ANFClaw Node...':'Initializing ANFClaw Node...'}</span><br>`;
   setTimeout(runScript, 1500);
 }
 
@@ -175,7 +216,7 @@ function setupFormHandler() {
     
     const btn = contactForm.querySelector("button");
     if (btn) {
-      btn.textContent = "ĐANG GỬI DỮ LIỆU...";
+      btn.textContent = currentLang === 'vi' ? "ĐANG GỬI DỮ LIỆU..." : "SENDING DATA...";
       btn.disabled = true;
     }
 
@@ -203,19 +244,19 @@ function setupFormHandler() {
         body: urlParams
       });
 
-      formMsg.innerHTML = `Hệ thống đã ghi nhận yêu cầu.<br>Cảm ơn <b>${name}</b>, Kỹ sư ANFClaw sẽ tiếp nhận yêu cầu từ <b>${org}</b>!`;
+      formMsg.innerHTML = currentLang === 'vi' ? `Hệ thống đã ghi nhận yêu cầu.<br>Cảm ơn <b>${name}</b>, Kỹ sư ANFClaw sẽ tiếp nhận yêu cầu từ <b>${org}</b>!` : `Request received.<br>Thank you <b>${name}</b>, an ANFClaw Engineer will contact <b>${org}</b> shortly!`;
       formMsg.classList.remove("hidden");
       formMsg.style.marginTop = "1rem";
       formMsg.style.color = "#00E5FF";
       contactForm.reset();
       
     } catch (err) {
-      formMsg.textContent = "Có lỗi kết nối mạng. Vui lòng thử lại sau.";
+      formMsg.textContent = currentLang === 'vi' ? "Có lỗi kết nối mạng. Vui lòng thử lại sau." : "Network error. Please try again later.";
       formMsg.classList.remove("hidden");
       formMsg.style.color = "#ff5f56";
     } finally {
       if (btn) {
-        btn.textContent = "NHẬN TƯ VẤN KIẾN TRÚC HỆ THỐNG";
+        btn.textContent = (translations as any)[currentLang]['cta.f.btn'];
         btn.disabled = false;
       }
     }

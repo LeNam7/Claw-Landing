@@ -31,12 +31,14 @@
         <div class="logo-text">ANF <span class="text-cyan">Technology</span></div>
       </a>
       <div class="nav-links desktop-only">
-        <a href="#hero">Tổng quan</a>
-        <a href="#features">Tính năng</a>
-        <a href="#deploy">Triển khai</a>
-        <a href="#integrations">Tích hợp</a>
+        <a href="#hero" data-i18n="nav.overview">Tổng quan</a>
+        <a href="#features" data-i18n="nav.features">Tính năng</a>
+        <a href="#deploy" data-i18n="nav.deploy">Triển khai</a>
+        <a href="#integrations" data-i18n="nav.integrations">Tích hợp</a>
+        <a href="#consulting" data-i18n="nav.consult">Tư vấn</a>
       </div>
       <div class="nav-actions" style="display: flex; gap: 1rem; align-items: center;">
+        <button id="lang-toggle" class="btn-icon" aria-label="Toggle language">VI</button>
         <button id="theme-toggle" class="btn-icon" aria-label="Toggle theme">
           <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20"
             height="20" style="display: none;">
@@ -55,7 +57,7 @@
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
         </button>
-        <a href="#lead-form" class="btn-primary-sm">Đăng ký ngay</a>
+        <a href="#lead-form" class="btn-primary-sm" data-i18n="nav.signup">Đăng ký ngay</a>
       </div>
     </div>
   </nav>
@@ -64,14 +66,13 @@
   <header id="hero" class="hero container">
     <div class="hero-text">
       <div class="badge glow-badge">
-        <span class="pulse-dot"></span> Phiên bản v2.0 đã sẵn sàng
+        <span class="pulse-dot"></span> <span data-i18n="hero.badge">Phiên bản v2.0 đã sẵn sàng</span>
       </div>
-      <h1><span class="text-gradient">Autonomous Agent</span><br>Kinh doanh thế hệ mới</h1>
-      <p class="subtitle">Bứt phá giới hạn tự động hoá. ANFClaw kết nối quy trình dữ liệu của bạn với sức mạnh tiên tiến
-        nhất, hoạt động 24/7 trực tiếp trên bất kỳ môi trường nào (Zalo, WeChat, Terminal).</p>
+      <h1><span class="text-gradient" data-i18n="hero.title.1">Autonomous Agent</span><br><span data-i18n="hero.title.2">Kinh doanh thế hệ mới</span></h1>
+      <p class="subtitle" data-i18n="hero.sub">Bứt phá giới hạn tự động hoá. ANFClaw kết nối quy trình dữ liệu của bạn với sức mạnh tiên tiến nhất, hoạt động 24/7 trực tiếp trên bất kỳ môi trường nào (Zalo, WeChat, Terminal).</p>
       <div class="hero-actions">
-        <a href="#lead-form" class="btn-primary">Trải nghiệm ngay</a>
-        <a href="#deploy" class="btn-secondary outline-glow">Xem tuỳ chọn triển khai</a>
+        <a href="#lead-form" class="btn-primary" data-i18n="hero.btn.primary">Trải nghiệm ngay</a>
+        <a href="#deploy" class="btn-secondary outline-glow" data-i18n="hero.btn.secondary">Xem tuỳ chọn triển khai</a>
       </div>
     </div>
 
@@ -84,7 +85,7 @@
             <div class="window-controls">
               <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
             </div>
-            <span class="panel-title">clawbot_engine — root</span>
+            <span class="panel-title" data-i18n="hero.term.title">clawbot_engine — root</span>
           </div>
           <div class="panel-body" id="terminal-view">
             <!-- Text injected by TS -->
@@ -104,11 +105,11 @@
         <!-- Chat Platform Side -->
         <div class="glass-panel chat-panel custom-glass">
           <div class="panel-header">
-            <div class="platform-tab">Telegram / Zalo Bridge</div>
+            <div class="platform-tab" data-i18n="hero.chat.tab">Telegram / Zalo Bridge</div>
           </div>
           <div class="chat-body" id="chat-view">
             <div class="chat-message user-msg">
-              <div class="msg-bubble">Trích xuất báo cáo doanh số tháng 5 cho nhóm nhé.</div>
+              <div class="msg-bubble" data-i18n="hero.chat.msg">Trích xuất báo cáo doanh số tháng 5 cho nhóm nhé.</div>
             </div>
             <div class="chat-message bot-msg hidden" id="typing-indicator">
               <div class="msg-bubble typing"><span class="dotting"></span><span class="dotting"></span><span
@@ -123,8 +124,8 @@
   <!-- Capabilities Section (Features) -->
   <section id="features" class="features container">
     <div class="section-heading text-center">
-      <h2><span class="text-cyan">Kiến trúc</span> vượt trội</h2>
-      <p>Linh hoạt tối đa. Bảo mật tuyệt đối. Xử lý đa luồng.</p>
+      <h2><span class="text-cyan" data-i18n="feat.heading.1">Kiến trúc</span> <span data-i18n="feat.heading.2">vượt trội</span></h2>
+      <p data-i18n="feat.sub">Linh hoạt tối đa. Bảo mật tuyệt đối. Xử lý đa luồng.</p>
     </div>
 
     <div class="grid feature-grid">
@@ -135,8 +136,8 @@
               d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16" />
           </svg>
         </div>
-        <h3>Đa Mô Hình AI</h3>
-        <p>Tương thích hoàn hảo với OpenAI, Claude, DeepSeek và cả LLM Local, tự do chuyển đổi không bị khoá.</p>
+        <h3 data-i18n="feat.1.t">Đa Mô Hình AI</h3>
+        <p data-i18n="feat.1.d">Tương thích hoàn hảo với OpenAI, Claude, DeepSeek và cả LLM Local, tự do chuyển đổi không bị khoá.</p>
       </div>
       <div class="feature-card custom-glass">
         <div class="icon glow-icon">
@@ -145,8 +146,8 @@
             <path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1" />
           </svg>
         </div>
-        <h3>Tương Tác Đa Kênh</h3>
-        <p>Quản lý yêu cầu qua Zalo, WeChat, Slack hay Telegram trong cùng một bộ não quản lý trung tâm.</p>
+        <h3 data-i18n="feat.2.t">Tương Tác Đa Kênh</h3>
+        <p data-i18n="feat.2.d">Quản lý yêu cầu qua Zalo, WeChat, Slack hay Telegram trong cùng một bộ não quản lý trung tâm.</p>
       </div>
       <div class="feature-card custom-glass">
         <div class="icon glow-icon">
@@ -157,8 +158,8 @@
             <path d="M6 4v4" />
           </svg>
         </div>
-        <h3>Truy Cập Web Động</h3>
-        <p>Agent tự động lướt web, điền form, và scrape dữ liệu thời gian thực không cần API từ nguồn cung cấp.</p>
+        <h3 data-i18n="feat.3.t">Truy Cập Web Động</h3>
+        <p data-i18n="feat.3.d">Agent tự động lướt web, điền form, và scrape dữ liệu thời gian thực không cần API từ nguồn cung cấp.</p>
       </div>
     </div>
   </section>
@@ -166,51 +167,71 @@
   <!-- Deployment Options (New) -->
   <section id="deploy" class="deploy container">
     <div class="section-heading text-center">
-      <h2>Lựa chọn <span class="text-purple">triển khai</span> linh hoạt</h2>
-      <p>Phù hợp cho cả đối tượng cá nhân và các doanh nghiệp có đội IT in-house.</p>
+      <h2><span data-i18n="deploy.heading.1">Lựa chọn </span><span class="text-purple" data-i18n="deploy.heading.2">triển khai</span><span data-i18n="deploy.heading.3"> linh hoạt</span></h2>
+      <p data-i18n="deploy.sub">Phù hợp cho cả đối tượng cá nhân và các doanh nghiệp có đội IT in-house.</p>
     </div>
 
     <div class="deploy-grid">
       <!-- Managed Deploy (Thay thế One-Click) -->
       <div class="deploy-card custom-glass hover-scale">
-        <div class="deploy-badge">Phổ Biến Nhất</div>
-        <h3>Dịch vụ Trọn Gói (Managed Service)</h3>
-        <p class="deploy-desc">Dành cho tập thể không chuyên kỹ thuật. Đội ngũ kỹ sư của chúng tôi sẽ uỷ thác cấu hình
+        <div class="deploy-badge" data-i18n="deploy.m.badge">Phổ Biến Nhất</div>
+        <h3 data-i18n="deploy.m.t">Dịch vụ Trọn Gói (Managed Service)</h3>
+        <p class="deploy-desc" data-i18n="deploy.m.d">Dành cho tập thể không chuyên kỹ thuật. Đội ngũ kỹ sư của chúng tôi sẽ uỷ thác cấu hình
           và bàn giao bot vận hành 24/7.</p>
         <ul class="deploy-features">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2">
               <polyline points="20 6 9 17 4 12"></polyline>
-            </svg> Thiết lập máy chủ và AI tuỳ chỉnh</li>
+            </svg> <span data-i18n="deploy.m.f1">Thiết lập máy chủ và AI tuỳ chỉnh</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2">
               <polyline points="20 6 9 17 4 12"></polyline>
-            </svg> Bàn giao hệ thống nhanh chóng</li>
+            </svg> <span data-i18n="deploy.m.f2">Bàn giao hệ thống nhanh chóng</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2">
               <polyline points="20 6 9 17 4 12"></polyline>
-            </svg> Huấn luyện Agent theo nghiệp vụ riêng</li>
+            </svg> <span data-i18n="deploy.m.f3">Huấn luyện Agent theo nghiệp vụ riêng</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2">
               <polyline points="20 6 9 17 4 12"></polyline>
-            </svg> Hỗ trợ xử lý lỗi kỹ thuật định kỳ</li>
+            </svg> <span data-i18n="deploy.m.f4">Hỗ trợ xử lý lỗi kỹ thuật định kỳ</span></li>
         </ul>
       </div>
 
       <!-- Local / Enterprise Deploy -->
       <div class="deploy-card custom-glass border-glow hover-scale outline-cyan">
-        <h3>Tự Triển Khai (Local Sandbox)</h3>
-        <p class="deploy-desc">Dành cho cá nhân/tổ chức vững công nghệ. Tự tải mã nguồn, tự thiết lập trên máy chủ nội
+        <h3 data-i18n="deploy.l.t">Tự Triển Khai (Local Sandbox)</h3>
+        <p class="deploy-desc" data-i18n="deploy.l.d">Dành cho cá nhân/tổ chức vững công nghệ. Tự tải mã nguồn, tự thiết lập trên máy chủ nội
           bộ để kiểm soát 100%.</p>
         <ul class="deploy-features">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="#9D00FF" stroke-width="2">
               <polyline points="20 6 9 17 4 12"></polyline>
-            </svg> Bảo mật dữ liệu mã nguồn nội bộ</li>
+            </svg> <span data-i18n="deploy.l.f1">Bảo mật dữ liệu mã nguồn nội bộ</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="#9D00FF" stroke-width="2">
               <polyline points="20 6 9 17 4 12"></polyline>
-            </svg> Tự do cấp quyền Sandbox cho hệ điều hành</li>
+            </svg> <span data-i18n="deploy.l.f2">Tự do cấp quyền Sandbox cho hệ điều hành</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="#9D00FF" stroke-width="2">
               <polyline points="20 6 9 17 4 12"></polyline>
-            </svg> Không giới hạn tuỳ chỉnh script/tool nội bộ</li>
+            </svg> <span data-i18n="deploy.l.f3">Không giới hạn tuỳ chỉnh script/tool nội bộ</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="#9D00FF" stroke-width="2">
               <polyline points="20 6 9 17 4 12"></polyline>
-            </svg> Tự quản lý chi phí gọi API từ gốc</li>
+            </svg> <span data-i18n="deploy.l.f4">Tự quản lý chi phí gọi API từ gốc</span></li>
+        </ul>
+      </div>
+
+      <!-- AI Model Deploy -->
+      <div class="deploy-card custom-glass hover-scale outline-orange">
+        <h3 data-i18n="deploy.api.t">Cung Cấp AI Model (API)</h3>
+        <p class="deploy-desc" data-i18n="deploy.api.d">Dành cho ứng dụng bên thứ 3. Kết nối và gọi trực tiếp vào Hub AI của ANFClaw an toàn tuyệt đối.</p>
+        <ul class="deploy-features">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#FF7E00" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg> <span data-i18n="deploy.api.f1">Truy cập đa dạng các LLM hàng đầu</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#FF7E00" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg> <span data-i18n="deploy.api.f2">Thanh toán trả sau (PAYG) linh hoạt</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#FF7E00" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg> <span data-i18n="deploy.api.f3">Hạ tầng GPU hiệu suất cao (Low Latency)</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#FF7E00" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg> <span data-i18n="deploy.api.f4">Bao gồm dịch vụ huấn luyện Fine-tuning</span></li>
         </ul>
       </div>
     </div>
@@ -219,8 +240,8 @@
   <!-- Integrations Section -->
   <section id="integrations" class="integrations container">
     <div class="section-heading text-center">
-      <h2>Kết nối không giới hạn với <span class="text-cyan">hệ sinh thái</span> của bạn</h2>
-      <p>Tương thích ngay lập tức với các nền tảng tin nhắn, công cụ làm việc và AI Models hàng đầu.</p>
+      <h2><span data-i18n="integ.heading.1">Kết nối không giới hạn với </span><span class="text-cyan" data-i18n="integ.heading.2">hệ sinh thái</span><span data-i18n="integ.heading.3"> của bạn</span></h2>
+      <p data-i18n="integ.sub">Tương thích ngay lập tức với các nền tảng tin nhắn, công cụ làm việc và AI Models hàng đầu.</p>
     </div>
 
     <div class="integrations-showcase">
@@ -268,13 +289,40 @@
       </div>
     </div>
   </section>
+  <!-- Consulting Section -->
+  <section id="consulting" class="consulting container">
+    <div class="consult-wrapper custom-glass border-glow outline-cyan">
+      <div class="consult-header text-center">
+        <h2><span data-i18n="consult.heading.1">Dịch vụ </span><span class="text-gradient" data-i18n="consult.heading.2">Tư vấn</span><span data-i18n="consult.heading.3"> Chiến lược AI</span></h2>
+        <p data-i18n="consult.sub" class="subtitle" style="margin: 0 auto; max-width: 800px;">Chưa rõ bắt đầu ứng dụng AI từ đâu? Đội ngũ chuyên gia của ANFClaw sẽ đồng hành cùng doanh nghiệp bạn từ khâu đánh giá quy trình đến thiết kế và triển khai kiến trúc nội bộ.</p>
+      </div>
+
+      <div class="consult-steps">
+        <div class="consult-step custom-glass hover-scale">
+          <div class="step-num">1</div>
+          <h4 data-i18n="consult.point1.t">Tư Vấn</h4>
+          <p data-i18n="consult.point1.d">Tư vấn lựa chọn mô hình AI phù hợp cùng với chuyên gia của ANF.</p>
+        </div>
+        <div class="consult-step custom-glass hover-scale">
+          <div class="step-num">2</div>
+          <h4 data-i18n="consult.point2.t">Thiết Lập</h4>
+          <p data-i18n="consult.point2.d">Cài đặt mô hình AI phù hợp với thiết bị của bạn</p>
+        </div>
+        <div class="consult-step custom-glass hover-scale">
+          <div class="step-num">3</div>
+          <h4 data-i18n="consult.point3.t">Tối Ưu Hóa</h4>
+          <p data-i18n="consult.point3.d">Tối ưu hóa theo quy trình khách hàng và đồng hành trong quá trình sử dụng ( ⭐ GÓI PRO )</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Lead Form & Integrations -->
   <section id="lead-form" class="cta-section container">
     <div class="cta-wrapper custom-glass mesh-inside">
       <div class="cta-content">
-        <h2>Bắt đầu hoàn toàn tự động ngay hôm nay</h2>
-        <p>Hãy để ANFClaw gia tăng năng suất của đội ngũ bạn x100 lần.</p>
+        <h2 data-i18n="cta.heading">Bắt đầu hoàn toàn tự động ngay hôm nay</h2>
+        <p data-i18n="cta.sub">Hãy để ANFClaw gia tăng năng suất của đội ngũ bạn x100 lần.</p>
 
         <div class="integrations-mini">
           <span class="integration-tag">Zalo</span>
@@ -287,25 +335,26 @@
         <form id="contact-form" class="form-layout">
           <div class="input-row">
             <div class="input-group">
-              <label>Họ và Tên</label>
-              <input type="text" id="lead-name" required placeholder="Nguyen Van A">
+              <label data-i18n="cta.f.name">Họ và Tên</label>
+              <input type="text" id="lead-name" required placeholder="Nguyen Van A" data-i18n-placeholder="cta.f.name.ph">
             </div>
             <div class="input-group">
-              <label>Doanh Nghiệp / Đội nhóm</label>
-              <input type="text" id="lead-org" required placeholder="Tên tổ chức">
+              <label data-i18n="cta.f.org">Doanh Nghiệp / Đội nhóm</label>
+              <input type="text" id="lead-org" required placeholder="Tên tổ chức" data-i18n-placeholder="cta.f.org.ph">
             </div>
           </div>
 
           <div class="input-group">
-            <label>Nhu Cầu Triển Khai Phương Án Nào?</label>
+            <label data-i18n="cta.f.plan">Nhu Cầu Triển Khai Phương Án Nào?</label>
             <select id="lead-plan" required>
-              <option value="">-- Lựa chọn --</option>
-              <option value="managed">Dịch vụ Trọn Gói (Cài đặt bởi Kỹ sư ANFClaw)</option>
-              <option value="local">Tự Triển Khai (Khách hàng tự host mã nguồn)</option>
+              <option value="" data-i18n="cta.f.opt0">-- Lựa chọn --</option>
+              <option value="managed" data-i18n="cta.f.opt1">Dịch vụ Trọn Gói (Cài đặt bởi Kỹ sư ANFClaw)</option>
+              <option value="local" data-i18n="cta.f.opt2">Tự Triển Khai (Khách hàng tự host mã nguồn)</option>
+              <option value="api" data-i18n="cta.f.opt3">Mua / Thuê API từ AI Model</option>
             </select>
           </div>
 
-          <button type="submit" class="btn-primary w-full btn-large">Nhận tư vấn kiến trúc hệ thống</button>
+          <button type="submit" class="btn-primary w-full btn-large" data-i18n="cta.f.btn">Nhận tư vấn kiến trúc hệ thống</button>
           <div id="form-message" class="form-msg hidden"></div>
         </form>
       </div>
@@ -318,13 +367,11 @@
         <a href="#" class="logo">
           <span class="logo-text">ANF <span class="text-gradient">Technology</span></span>
         </a>
-        <p class="copyright">© 2026 ANF Technology. All rights reserved. The ultimate local & cloud AI agent hub.</p>
+        <p class="copyright" data-i18n="footer.desc">© 2026 ANF Technology. All rights reserved. The ultimate local & cloud AI agent hub.</p>
       </div>
       <div class="footer-links">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Service</a>
-        <a href="#">Documentation</a>
-        <a href="#">GitHub</a>
       </div>
     </div>
   </footer>
