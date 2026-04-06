@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ClawBot - Enterprise Autonomous Agent</title>
+    <!-- Import Google Fonts: Inter and outfit for modern B2B SaaS feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <!-- Premium Mesh Gradient Background -->
+    <div class="mesh-bg">
+      <div class="mesh-blob blob-1"></div>
+      <div class="mesh-blob blob-2"></div>
+      <div class="mesh-blob blob-3"></div>
+      <div class="mesh-noise"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar glass-header">
+      <div class="container nav-content">
+        <a href="#" class="logo">
+          <div class="logo-text">ANF-<span class="text-cyan">Tenology</span></div>
+        </a>
+        <div class="nav-links desktop-only">
+          <a href="#hero">Tổng quan</a>
+          <a href="#features">Tính năng</a>
+          <a href="#deploy">Triển khai</a>
+          <a href="#integrations">Tích hợp</a>
+        </div>
+        <div class="nav-actions">
+           <a href="#lead-form" class="btn-primary-sm">Đăng ký ngay</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="hero" class="hero container">
+      <div class="hero-text">
+        <div class="badge glow-badge">
+          <span class="pulse-dot"></span> PHIÊN BẢN V2.0 ĐÃ SẴN SÀNG
+        </div>
+        <h1><span class="text-gradient">AUTONOMOUS AGENT</span><br>KINH DOANH THẾ HỆ MỚI</h1>
+        <p class="subtitle">Bứt phá giới hạn tự động hoá. ANFClaw kết nối quy trình dữ liệu của bạn với sức mạnh LLM tiên tiến nhất, hoạt động 24/7 trực tiếp trên bất kỳ môi trường nào (Zalo, WeChat, Terminal).</p>
+        <div class="hero-actions">
+           <a href="#lead-form" class="btn-primary">TRẢI NGHIỆM NGAY</a>
+           <a href="#deploy" class="btn-secondary outline-glow">Xem tuỳ chọn triển khai</a>
+        </div>
+      </div>
+
+      <!-- Dual Engine Visual -->
+      <div class="hero-visual full-width">
+        <div class="dual-engine">
+          <!-- Terminal Side -->
+          <div class="glass-panel terminal-panel custom-glass">
+            <div class="panel-header">
+               <div class="window-controls">
+                 <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+               </div>
+               <span class="panel-title">clawbot_engine — root</span>
+            </div>
+            <div class="panel-body" id="terminal-view">
+              <!-- Text injected by TS -->
+            </div>
+          </div>
+
+          <!-- Connection visual -->
+          <div class="connection-line">
+             <div class="data-packet"></div>
+             <div class="data-packet p-2"></div>
+             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="sync-icon"><path d="M7 16V4M7 4L3 8M7 4L11 8M17 8V20M17 20L21 16M17 20L13 16"/></svg>
+          </div>
+
+          <!-- Chat Platform Side -->
+          <div class="glass-panel chat-panel custom-glass">
+            <div class="panel-header">
+               <div class="platform-tab">Telegram / Zalo Bridge</div>
+            </div>
+            <div class="chat-body" id="chat-view">
+              <div class="chat-message user-msg">
+                <div class="msg-bubble">Trích xuất báo cáo doanh số tháng 5 cho nhóm nhé.</div>
+              </div>
+              <div class="chat-message bot-msg hidden" id="typing-indicator">
+                <div class="msg-bubble typing"><span class="dotting"></span><span class="dotting"></span><span class="dotting"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Capabilities Section (Features) -->
+    <section id="features" class="features container">
+      <div class="section-heading text-center">
+        <h2><span class="text-cyan">KIẾN TRÚC</span> VƯỢT TRỘI</h2>
+        <p>Linh hoạt tối đa. Bảo mật tuyệt đối. Xử lý đa luồng.</p>
+      </div>
+      
+      <div class="grid feature-grid">
+        <div class="feature-card custom-glass">
+          <div class="icon glow-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></svg>
+          </div>
+          <h3>Đa Mô Hình AI</h3>
+          <p>Tương thích hoàn hảo với OpenAI, Claude, DeepSeek và cả LLM Local, tự do chuyển đổi không bị khoá.</p>
+        </div>
+        <div class="feature-card custom-glass">
+          <div class="icon glow-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></svg>
+          </div>
+          <h3>Tương Tác Đa Kênh</h3>
+          <p>Quản lý yêu cầu qua Zalo, WeChat, Slack hay Telegram trong cùng một bộ não quản lý trung tâm.</p>
+        </div>
+        <div class="feature-card custom-glass">
+          <div class="icon glow-icon">
+             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M10 4v4"/><path d="M2 8h20"/><path d="M6 4v4"/></svg>
+          </div>
+          <h3>Truy Cập Web Động</h3>
+          <p>Agent tự động lướt web, điền form, và scrape dữ liệu thời gian thực không cần API từ nguồn cung cấp.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deployment Options (New) -->
+    <section id="deploy" class="deploy container">
+      <div class="section-heading text-center">
+        <h2>LỰA CHỌN <span class="text-purple">TRIỂN KHAI</span> LINH HOẠT</h2>
+        <p>Phù hợp cho cả đối tượng cá nhân và các doanh nghiệp có đội IT in-house.</p>
+      </div>
+
+      <div class="deploy-grid">
+        <!-- Managed Deploy (Thay thế One-Click) -->
+        <div class="deploy-card custom-glass hover-scale">
+           <div class="deploy-badge">Phổ Biến Nhất</div>
+           <h3>Dịch vụ Trọn Gói (Managed Service)</h3>
+           <p class="deploy-desc">Dành cho tập thể không chuyên kỹ thuật. Đội ngũ kỹ sư của chúng tôi sẽ uỷ thác cấu hình và bàn giao bot vận hành 24/7.</p>
+           <ul class="deploy-features">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Thiết lập máy chủ và AI tuỳ chỉnh</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Bàn giao hệ thống nhanh chóng</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Huấn luyện Agent theo nghiệp vụ riêng</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Hỗ trợ xử lý lỗi kỹ thuật định kỳ</li>
+           </ul>
+        </div>
+
+        <!-- Local / Enterprise Deploy -->
+        <div class="deploy-card custom-glass border-glow hover-scale outline-cyan">
+           <h3>Tự Triển Khai (Local Sandbox)</h3>
+           <p class="deploy-desc">Dành cho cá nhân/tổ chức vững công nghệ. Tự tải mã nguồn, tự thiết lập trên máy chủ nội bộ để kiểm soát 100%.</p>
+           <ul class="deploy-features">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="#9D00FF" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Bảo mật dữ liệu mã nguồn nội bộ</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="#9D00FF" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Tự do cấp quyền Sandbox cho hệ điều hành</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="#9D00FF" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Không giới hạn tuỳ chỉnh script/tool nội bộ</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="#9D00FF" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Tự quản lý chi phí gọi API từ gốc</li>
+           </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Integrations Section -->
+    <section id="integrations" class="integrations container">
+      <div class="section-heading text-center">
+        <h2>KẾT NỐI KHÔNG GIỚI HẠN VỚI <span class="text-cyan">HỆ SINH THÁI</span> CỦA BẠN</h2>
+        <p>Tương thích ngay lập tức với các nền tảng tin nhắn, công cụ làm việc và AI Models hàng đầu.</p>
+      </div>
+      
+      <div class="integrations-showcase">
+        <div class="integration-group">
+           <h4 class="group-title">LLM Providers</h4>
+           <div class="pills-container">
+             <div class="premium-pill"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 0 0-10 10 10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2z"></path><path d="M12 6v6l4 2"></path></svg> OpenAI</div>
+             <div class="premium-pill"><img src="https://cdn.simpleicons.org/anthropic/D97757" width="18" height="18" alt="Claude"/> Claude</div>
+             <div class="premium-pill"><img src="https://cdn.simpleicons.org/googlegemini/8E75B2" width="18" height="18" alt="Gemini"/> Gemini</div>
+             <div class="premium-pill local-pill"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg> Local LLM</div>
+           </div>
+        </div>
+        
+        <div class="integration-group">
+           <h4 class="group-title">Messengers & Workspaces</h4>
+           <div class="pills-container">
+             <div class="premium-pill"><img src="https://cdn.simpleicons.org/telegram/26A5E4" width="18" height="18" alt="Telegram"/> Telegram</div>
+             <div class="premium-pill"><img src="https://cdn.simpleicons.org/zalo/0068FF" width="18" height="18" alt="Zalo"/> Zalo</div>
+             <div class="premium-pill"><img src="https://cdn.simpleicons.org/discord/5865F2" width="18" height="18" alt="Discord"/> Discord</div>
+             <div class="premium-pill"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E01E5A" stroke-width="2"><path d="M22 6h-4M22 18h-4M6 6H2M6 18H2M10 2v20M14 2v20M18 10H6M18 14H6"></path></svg> Slack</div>
+             <div class="premium-pill"><img src="https://cdn.simpleicons.org/github/FFFFFF" width="18" height="18" alt="GitHub"/> GitHub</div>
+             <div class="premium-pill"><img src="https://cdn.simpleicons.org/googlechrome/4285F4" width="18" height="18" alt="Browser"/> Auto-Browser</div>
+           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lead Form & Integrations -->
+    <section id="lead-form" class="cta-section container">
+      <div class="cta-wrapper custom-glass mesh-inside">
+         <div class="cta-content">
+           <h2>BẮT ĐẦU HOÀN TOÀN TỰ ĐỘNG NGAY HÔM NAY</h2>
+           <p>Hãy để ANFClaw gia tăng năng suất của đội ngũ bạn x100 lần.</p>
+           
+           <div class="integrations-mini">
+              <span class="integration-tag">Zalo</span>
+              <span class="integration-tag">WeChat</span>
+              <span class="integration-tag">Telegram</span>
+              <span class="integration-tag">Slack</span>
+              <span class="integration-tag">Lark Suite</span>
+           </div>
+
+           <form id="contact-form" class="form-layout">
+             <div class="input-row">
+               <div class="input-group">
+                 <label>Họ và Tên</label>
+                 <input type="text" id="lead-name" required placeholder="Nguyen Van A">
+               </div>
+               <div class="input-group">
+                 <label>Doanh Nghiệp / Đội nhóm</label>
+                 <input type="text" id="lead-org" required placeholder="Tên tổ chức">
+               </div>
+             </div>
+             
+             <div class="input-group">
+               <label>Nhu Cầu Triển Khai Phương Án Nào?</label>
+               <select id="lead-plan" required>
+                 <option value="">-- Lựa chọn --</option>
+                 <option value="managed">Dịch vụ Trọn Gói (Cài đặt bởi Kỹ sư ANFClaw)</option>
+                 <option value="local">Tự Triển Khai (Khách hàng tự host mã nguồn)</option>
+               </select>
+             </div>
+
+             <button type="submit" class="btn-primary w-full btn-large">NHẬN TƯ VẤN KIẾN TRÚC HỆ THỐNG</button>
+             <div id="form-message" class="form-msg hidden"></div>
+           </form>
+         </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="brand">
+          <a href="#" class="logo">
+             <div class="logo-text">ANF-<span class="text-cyan">Tenology</span></div>
+          </a>
+          <p class="copyright">© 2026 ANF-Tenology. All rights reserved. The ultimate local & cloud AI agent hub.</p>
+        </div>
+        <div class="footer-links">
+           <a href="#">Privacy Policy</a>
+           <a href="#">Terms of Service</a>
+           <a href="#">Documentation</a>
+           <a href="#">GitHub</a>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
